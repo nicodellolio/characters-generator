@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guests\CharactersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('guests.home')->name('guests.home'); 
 });
+
+Route::get('/characters', [CharactersController::class, 'index'])->name('guests.characters.index');
+
+Route::get('/characters{character}', [CharactersController::class, 'show'])->name('guests.characters.show');
