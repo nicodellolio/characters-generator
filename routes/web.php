@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('guests.home')->name('guests.home'); 
+    return view('home');
+
 });
 
 Route::get('/characters', [CharactersController::class, 'index'])->name('guests.characters.index');
