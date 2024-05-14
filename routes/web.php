@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guests\CharactersController;
+use App\Models\Characters;
 use Illuminate\Support\Facades\Route;
 
 /*
