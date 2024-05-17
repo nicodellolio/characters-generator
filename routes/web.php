@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\Guests\CharactersController;
 use App\Models\Characters;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,5 @@ Route::get('/', function () {
 Route::get('/characters', [CharactersController::class, 'index'])->name('guests.characters.index');
 
 Route::get('/characters{character}', [CharactersController::class, 'show'])->name('guests.characters.show');
+
+Route::resource('character', CharacterController::class);
