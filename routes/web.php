@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CharacterController;
+use App\Models\Characters;
 use App\Http\Controllers\Guests\ItemsController;
 use App\Http\Controllers\GuestsController;
 use App\Models\Item;
@@ -23,4 +25,6 @@ Route::get('/', function () {
 
 Route::get('/items', [ItemsController::class, 'index'])->name('guests.items');
 
+
+Route::resource('character', CharacterController::class);
 Route::get('/items{character}', [ItemsController::class, 'show'])->name('guests.show');
