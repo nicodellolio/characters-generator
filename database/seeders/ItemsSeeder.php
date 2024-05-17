@@ -6,16 +6,14 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Item;
 
-class ItemsTableSeeder extends Seeder
+class ItemsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $items = config('db.php');
-
-        dd($items);
+        $items = config('db');
 
         foreach ($items as $item) {
 

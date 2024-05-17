@@ -1,7 +1,6 @@
 <?php
 
-
-$charactersJson = file_get_contents(__DIR__ . './items.json');
-$charactersArray = json_decode($charactersJson, true);
-// dd($charactersArray);
-return $charactersArray;
+$itemsJson = file_get_contents(__DIR__ . '/items.json');
+$itemsArray = json_decode($itemsJson, true);
+//dd($itemsArray);
+return  $itemsArray;

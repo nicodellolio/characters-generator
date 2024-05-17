@@ -16,8 +16,8 @@ return new class extends Migration {
             $table->string('slug', 25)->nullable();
             $table->string('type', 50)->nullable();
             $table->string('category', 100)->nullable();
-            $table->tinyInteger('weight')->nullable();
-            $table->decimal('cost', 5, 2)->nullable();
+            $table->string('weight')->nullable();
+            $table->string('cost', 5, 2)->nullable();
             $table->string('damage_dice', 50)->nullable();
             $table->timestamps();
         });

@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Guests\CharactersController;
-use App\Models\Characters;
+use App\Http\Controllers\Guests\ItemsController;
+use App\Http\Controllers\GuestsController;
+use App\Models\Item;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,6 @@ Route::get('/', function () {
 
 });
 
-Route::get('/characters', [CharactersController::class, 'index'])->name('guests.characters.index');
+Route::get('/items', [ItemsController::class, 'index'])->name('guests.items');
 
-Route::get('/characters{character}', [CharactersController::class, 'show'])->name('guests.characters.show');
+Route::get('/items{character}', [ItemsController::class, 'show'])->name('guests.show');
