@@ -25,12 +25,12 @@
                             <div class="card-subtitle">Category: {{$item->category}}</div>
                             <card class="body">
                             </card>
-                            <div class="card-footer bg-secondary d-flex justify-content-between text-light fw-bold">
-                                <div class="price">
-                                    {{$item['price']}}
+                            <div class="card-footer bg-dark d-flex justify-content-between text-light fw-bold">
+                                <div class="cost bg-success px-2 py-1">
+                                    {{$item['cost']}}
                                 </div>
-                                <div class="damage_dice">
-                                    {{$item->damage_dice}}
+                                <div class="damage_dice bg-info py-1 px-2">
+                                    {{$item['damage_dice']}}
                                 </div>
                             </div>
                         </div>
