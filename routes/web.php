@@ -1,10 +1,8 @@
 <?php
 
 use App\Http\Controllers\CharacterController;
-use App\Models\Characters;
 use App\Http\Controllers\Guests\ItemsController;
-use App\Http\Controllers\GuestsController;
-use App\Models\Item;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +18,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/items', [ItemsController::class, 'index'])->name('guests.items');
 
-
 Route::resource('character', CharacterController::class);
-Route::get('/items{character}', [ItemsController::class, 'show'])->name('guests.show');
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
