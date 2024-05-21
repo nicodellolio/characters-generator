@@ -12,8 +12,8 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $characters = Character::orderByRaw('id');
-        return view('characters.index', compact('character'));
+        $characters = Character::all();
+        return view('characters.index', compact('characters'));
     }
 
     /**
