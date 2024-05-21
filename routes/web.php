@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\Guests\CharacterController;
 use App\Http\Controllers\Guests\ItemsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +28,7 @@ Route::get('/items', [ItemsController::class, 'index'])->name('guests.items');
 
 Route::get('/items{character}', [ItemsController::class, 'show'])->name('guests.show');
 
-Route::resource('character', CharacterController::class);
+Route::resource('characters', CharacterController::class);
 
 
 
@@ -38,4 +38,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
