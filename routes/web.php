@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -25,6 +25,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/items', [ItemsController::class, 'index'])->name('guests.items');
+
+Route::get('/items{character}', [ItemsController::class, 'show'])->name('guests.show');
 
 Route::resource('character', CharacterController::class);
 
